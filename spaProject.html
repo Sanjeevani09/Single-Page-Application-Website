@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head >
+        <title>Single Page Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+        <script src="SpaProjectJS.js" >  </script>
+        <link rel="stylesheet" type="text/css" href="spaProjectCSS.css">
+        <style>
+
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+          }
+
+          .container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            float: left
+          }
+
+          @keyframes blink {
+            0% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
+          .blinking-link {
+            animation: blink 1s infinite;
+            text-decoration: none;
+            color: red;
+          }
+        
+  </style>
+      </head>
+
+    <body ng-app="myApp">
+
+        <script type="text/ng-template" id="homecontent">
+            <h1>Be Interview Ready!!!!<h1>
+            <h4>{{message}}</h4>
+            <h3>{{message2}}</h3>
+            <p>{{message3}}</p>
+            <p>{{message4}}</p>
+            <p>{{message5}}</p>
+            <p>{{message6}}</p>
+            <p>{{message7}}</p>
+            <h4>{{message8}}</h4>
+            <p>{{message9}}</p>
+            <p>{{message10}}</p>
+            <h4>{{message11}}</h4>
+            <p>{{message12}}</p>
+            <p>{{message13}}</p>
+            <p>{{message14}}</p>
+        </script>
+
+        <script type="text/ng-template" id="dscontent">
+            <h1><u>Data Structure</u><h1>
+            <h3>{{message}}</h3>
+            <p>{{message2}}</p>
+            <h4>{{message3}}</h4>
+            <p>{{message4}}</p>
+            <p>{{message5}}</p>
+            <p>{{message6}}</p>
+            <h4>{{message7}}</h4>
+            <p>{{message8}}</p>
+            <p>{{message9}}</p>
+            <p>{{message10}}</p>
+            <h4>{{message11}}</h4>
+            <p>{{message12}}</p>
+            <p>{{message13}}</p>
+            <p>{{message14}}</p>
+            
+        </script>
+
+        <script type="text/ng-template" id="oopscontent">
+            <h1>Object Oriented Programming<h1>
+            <h3>{{message}}</h3>
+            <p>{{message2}}</p>
+            <p>{{message3}}</p>
+            <p>{{message4}}</p>
+            <p>{{message5}}</p>
+            <p>{{message6}}</p>
+            <p>{{message7}}</p>
+            <p>{{message8}}</p>
+            <p>{{message9}}</p>
+            <p>{{message10}}</p>
+            <h4>{{message11}}</h4>
+            <p>{{message12}}</p>
+            <p>{{message13}}</p>
+            <p>{{message14}}</p>
+        </script>
+
+        <script type="text/ng-template" id="sqlcontent">
+            <h1>SQL<h1>
+            <h3>{{message}}</h3>
+            <p>{{message2}}</p>
+            <h4>{{message3}}</h4>
+            <p>{{message4}}</p>
+            <p>{{message5}}</p>
+            <p>{{message6}}</p>
+            <p>{{message7}}</p>
+            <p>{{message8}}</p>
+            <p>{{message9}}</p>
+            <p>{{message10}}</p>
+            <h4>{{message11}}</h4>
+            <h4>{{message12}}</h4>
+            <p>{{message13}}</p>
+            <p>{{message14}}</p>
+        </script>
+
+        <script type="text/ng-template" id="javacontent">
+          <h1>JAVA<h1>
+          <h3>{{message}}</h3>
+          <p>{{message2}}</p>
+          <h4><u>{{message3}}</u></h4>
+          <p>{{message4}}</p>
+          <p>{{message5}}</p>
+          <p>{{message6}}</p>
+          <p>{{message7}}</p>
+          <p>{{message8}}</p>
+          <p>{{message9}}</p>
+          <h4>{{message10}}</h4>
+          <p>{{message11}}</p>
+          <p>{{message12}}</p>
+          <h4>{{message13}}</h4>
+          <p>{{message14}}</p>
+      </script>
+
+      <script type="text/ng-template" id="ccontent">
+        <h1>C / C++<h1>
+        <h3>{{message}}</h3>
+        <p>{{message2}}</p>
+        <h4>{{message3}}</h4>
+        <p>{{message4}}</p>
+        <p>{{message5}}</p>
+        <p>{{message6}}</p>
+        <p>{{message7}}</p>
+        <p>{{message8}}</p>
+        <p>{{message9}}</p>
+        <p>{{message10}}</p>
+        <h4>{{message11}}</h4>
+        <h4>{{message12}}</h4>
+        <h4>{{message13}}</h4>
+        <p>{{message14}}</p>
+    </script>
+
+        <header>
+            
+            <div  style="background-color: lightpink;" class="row g-0">
+                <nav style="padding:20px;margin:2px; background-color:pink;" class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <a  class="navbar-brand" href="#"><h1 style="padding-right: 10px; margin: 10px;">SECURE YOUR CAREER</h1></a>
+                      <h4>Crack Your Interview with Ace</h4>
+                      <h5>--By Sanjeevani Gupta </h5>
+
+                            <nav style="float:right">
+
+                            <div  class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                              <div class="navbar-nav">
+                                <a  class="nav-link active" aria-current="page" href="#">Home</a>  |
+                                <a class="nav-link" href="about.html">About</a>  |
+                                <a class="nav-link" href="register.html">Register</a>  |
+                                <a class="nav-link" href="login.html">Login</a>  | 
+                                <a class="nav-link" href="contact.html">Contact Us</a>  |
+                              </div>
+                            </div>
+                          </div>
+                        </nav>
+                        </nav>
+                      </nav>
+                      
+                       
+                      </div>
+                    </div>
+                  </nav>
+        </header>
+       
+  
+
+  <div  class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="blinking-link">
+      <h4>Things To Learn</h4>
+    </div>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><h4><a href="#!" >Home Page</a></h4></li>
+        <li class="nav-item mb-2"><h4><a href="#!ds" >Data Structure</a></h4></li>
+        <li class="nav-item mb-2"><h4><a href="#!sql" >SQL</a></h4></li>
+        <li class="nav-item mb-2"><h4><a href="#!oops" >OOPS</a></h4></li>
+        <li class="nav-item mb-2"><h4><a href="#!java" >JAVA</a></h4></li>
+        <li class="nav-item mb-2"><h4><a href="#!c">C / C++</a></h4></li>
+      </div>
+      </ul>
+    </div>
+    <img src="C:/Users/Lenovo/OneDrive/Documents/web/WT SPA Assignment/image/ds.png" alt="Logo" width="200" height="100"><br>
+    <img src="C:/Users/Lenovo/OneDrive/Documents/web/WT SPA Assignment/image/sql.png" alt="Logo" width="200" height="100"><br>
+    <img src="C:/Users/Lenovo/OneDrive/Documents/web/WT SPA Assignment/image/oops.jpeg" alt="Logo" width="200" height="100"><br>
+    <img src="C:/Users/Lenovo/OneDrive/Documents/web/WT SPA Assignment/image/java.jpeg" alt="Logo" width="200" height="100"><br>
+    <img src="C:/Users/Lenovo/OneDrive/Documents/web/WT SPA Assignment/image/c-img.jpeg" alt="Logo" width="200" height="100">
+  </div>
+
+<div class="col-12 col-md-10">
+<div ng-view> </div>
+</div>
+
+<br>
+<br>
+<br><br><br><br>
+
+<div class="blinking-link">
+  <h3>Thank You For Your Time!!!!</h3>
+</div>
+
+
+  <div class="blinking-link">
+    <div  style="background-color: lightskyblue;" class="row g-0">
+      <div class="col-10 col-md-10">
+          <h5 style="margin:10px;" class="card-title"><a href="register.html">Job that will grow in 2024 </a></h5>
+        </div>
+    </div>
+  </div>
+
+ 
+   
+ 
+        <footer>
+          <div class="footer">
+    
+                  <div  style="background-color: lightpink;">
+            <h5>More Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
+              <li class="nav-item mb-2"><a href="login.html" class="nav-link p-0 text-muted">Login</a></li>
+              <li class="nav-item mb-2"><a href="register.html" class="nav-link p-0 text-muted">Registration</a></li>
+              <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 text-muted">Reach US</a></li>
+            </ul>
+    
+                    <h4><p>  &copy; SECURE YOUR CAREER . All rights reserved by SANJEEVANI GUPTA. Project made under the guidance of PROF. KINJAL DOSHI  </p></h4>
+      <p>
+          <a href="#terms">Terms of Service</a> |
+          <a href="#privacy">Privacy Policy</a> |
+          <a href="#contact">Contact Us</a>
+      </p>
+    
+    </div>
+    </div>
+            
+</footer>
+    </body>
+</html>
